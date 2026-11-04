@@ -1,0 +1,271 @@
+:root {
+  --brown: #6b3d2e;
+  --brown-dark: #4e2b20;
+  --sand: #f6efe8;
+  --ink: #2a1d18;
+  --muted: #6e5f58;
+  --line: #d9cbbf;
+  --white: #ffffff;
+  --font: "Times New Roman", Times, Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  background: var(--brown);
+  color: var(--white);
+  border-radius: 0 0 6px 6px;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 64px 0;
+}
+
+.split.reverse {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.split-text h1 {
+  font-size: 2.6rem;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.split-text h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.split-text p {
+  max-width: 52ch;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* Image box: shows a soft placeholder until a real image loads */
+.split-media {
+  min-height: 260px;
+  background: var(--sand);
+  border: 2px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.split-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+}
+
+.divider {
+  border: 0;
+  border-top: 2px solid var(--line);
+}
+
+.button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 22px;
+  background: var(--brown);
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--brown-dark);
+}
+
+/* ---------- Cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 32px 0 80px;
+}
+
+.card {
+  padding: 28px 24px;
+  background: var(--sand);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: 28px;
+  text-align: center;
+  background: var(--brown);
+  color: var(--white);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 800px) {
+  .split,
+  .split.reverse {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 40px 0;
+  }
+
+  /* keep text first, image second on small screens */
+  .split.reverse .split-text { order: -1; }
+
+  .cards { grid-template-columns: 1fr; }
+  .split-text h1 { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .navbar { padding: 16px; }
+  .nav-links { gap: 14px; }
+}
+
+/* ---------- Active nav link ---------- */
+.nav-links a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Inner pages ---------- */
+.page-intro {
+  padding: 56px 0 40px;
+}
+
+.page-intro h1 {
+  font-size: 2.6rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.page-intro p {
+  max-width: 56ch;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.cta {
+  margin-bottom: 80px;
+  padding: 40px 32px;
+  text-align: center;
+  background: var(--sand);
+  border: 2px solid var(--line);
+  border-radius: 24px;
+}
+
+.cta h2 {
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+}
+
+.cta p {
+  max-width: 50ch;
+  margin: 0 auto 16px;
+  color: var(--muted);
+}
+
+/* ---------- Contact ---------- */
+.contact-layout {
+  align-items: start;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px 24px;
+  background: var(--sand);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+}
+
+.contact-form label {
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--white);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: 2px solid var(--brown);
+  outline-offset: 1px;
+}
+
+.contact-form .button {
+  align-self: flex-start;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | PlaceHolder</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="logo" href="index.html">PlaceHolder</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-intro">
+      <h1>Visit or contact PlaceHolder</h1>
+      <p>Drop in for a cup, or send us a message about orders, events and anything else. We reply within one working day.</p>
+    </section>
+
+    <hr class="divider">
+
+    <section class="split contact-layout">
+      <div class="split-text">
+        <h2>Find us</h2>
+        <p><strong>Address:</strong> Main Street, next to the market, Town Centre</p>
+        <p><strong>Phone / WhatsApp:</strong> +254 700 000 000</p>
+        <p><strong>Email:</strong> hello@placeholder.example</p>
+        <p><strong>Hours:</strong> Monday to Sunday, 7:00 to 19:00</p>
+        <p>Orders for events need at least three days&rsquo; notice.</p>
+      </div>
+
+      <!-- Opens the visitor's email app. Replace the address in action with yours. -->
+      <form class="contact-form" action="mailto:hello@placeholder.example" method="post" enctype="text/plain">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Your email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button class="button" type="submit">Send message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 PlaceHolder &middot; Open daily, 7:00 to 19:00 &middot; hello@placeholder.example</p>
+  </footer>
+
+</body>
+</html>
